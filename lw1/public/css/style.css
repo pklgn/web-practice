@@ -5,6 +5,13 @@
     background-color: #ffffff; /* Фон веб-страницы */
     color: #2d2c2c; /* Цвет текста */
 }
+
+.container
+{
+    max-width: 1000px;
+    margin: 100px 400px;
+}
+
 .title 
 {
     color: #011c39; /* Цвет заголовока */
@@ -18,20 +25,23 @@
     font-size: 16pt; /* Размер шрифта измеряемый в пунктах */
     font-family: 'Open Sans'; /* Семейство шрифтов */
     font-weight: normal; /* Нормальное начертание текста  */
+    margin: 0 auto 20px;
 }
-.list-items 
-{
-    padding: 0px;
-    margin-left: 100px; /* Отступ слева */
-}
+
 .main-text 
 {
     text-align: justify; /* Выравнивание по ширине */
     margin-left: 10px; /* Отступ слева в пикселах */
     margin-right: 50px; /* Отступ справа в пикселах */
     padding-left: 0px; /* Отступ от линии слева до текста  */
-    padding-bottom: 10px; /* Отступ от линии снизу до текста  */
 }
+
+.list-items
+{
+    padding: 0px;
+    margin-left: 100px; /* Отступ слева */
+}
+
 .list-items__item
 {
     margin: 0;
@@ -48,6 +58,11 @@
     text-indent: 2em;
 }
 
+.contacts__logo::after
+{
+    content: " ";
+}
+
 .contacts__logo
 {
     width: 15px;
@@ -56,6 +71,8 @@
 
 .photo
 {
+    width: 135px;
+    height: 180px;
     border-radius: 3px 3px;
     box-shadow: 0 2px 10px rgba(0,0,0.1,0.3);
     float: left;
