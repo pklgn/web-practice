@@ -71,8 +71,8 @@
 
 .photo
 {
-    width: 135px;
-    height: 180px;
+    width: 20%;
+    height: 20%;
     border-radius: 3px 3px;
     box-shadow: 0 2px 10px rgba(0,0,0.1,0.3);
     float: left;
