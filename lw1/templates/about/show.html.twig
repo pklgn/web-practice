@@ -2,37 +2,50 @@
 <html lang="ru">
 <head>
     <title>Страница обо мне</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-        .leftimg {
-            float:left; /* Выравнивание по левому краю */
-            margin: 10px 10px 10px 0; /* Отступы вокруг картинки */
-        }
-    </style>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
 </head>
-<body>
-    <h1>{{ about }}</h1>
-    <p><img src="/images/photo.jpg" width="135" height="180" class="leftimg">
-        Web-разработка для меня новая область изучения. До этого я не занимался
-        версткой сайтов и <i>html, css, php</i>, к сожалению, ранее также не изучал.
-        Тем не менее, web-разработка для меня интересна, потому что она помогает понять
-        то, как устроены сайты, с которыми каждый день взаимодействует большое количество
-        людей.</br>
-    <p>Также нравится астрономия, космонавтика; в школе принимал участие
-        в олимпиадах по астрономии.</br> В настоящее время изучаю:
-        </p>
-    <ul>
-        <li>Основы программирования</li>
-        <li>Ассемблер</li>
-        <li>Скриптовый язык <i>PHP</i></li>
-    </ul>
-    </p>
-    <h2>Мои контакты</h2>
-    <ol>
-        <li><a href="https://vk.com/id242486420"> <img src="/images/logoVK.png" width="15" height="15"> VK</a></li>
-        <li><a href="https://github.com/pklgn/web-practice"> <img src="/images/logoGitHub.png" width="15" height="15"> GitHub</a></li>
-    </ol>
+<body class="page">
+    <div class="container">
+        <div class="info">
+            <h1 class="title">{{ about }}</h1>
+            <p class="main-text">
+                <img class="photo" src="../../public/images/photo.jpg" width="135" height="180" alt="Me" />
+                Web-разработка для меня новая область изучения. До этого я не занимался
+                версткой сайтов и <i class="italic-text">html, css, php</i>, к сожалению, ранее также не изучал.
+                Тем не менее, web-разработка для меня интересна, потому что она помогает понять
+                то, как устроены сайты, с которыми каждый день взаимодействует большое количество
+                людей.
+            </p>
+            <p class="main-text">
+                Также нравится астрономия, космонавтика; в школе принимал участие
+                в олимпиадах по астрономии. В настоящее время изучаю:
+            </p>
+            <div class="list">
+                <div class="title"></div>
+                <ul class="list-items">
+                    <li class="list-items__item">Основы программирования</li>
+                    <li class="list-items__item">Ассемблер</li>
+                    <li class="list-items__item">Скриптовый язык <i class="italic-text">PHP</i></li>
+                </ul>
+            </div>
+            <div class="contacts"></div>
+                <h2 class="subtitle">Мои контакты</h2>
+                <ol class="numerical-list">
+                    <li class="numerical-list__item">
+                        <a class="contacts__link" href=https://vk.com/id242486420">
+                            <img class="contacts__logo" src="../../public/images/logoVK.png" alt="">VK
+                        </a>
+                    </li>
+                    <li class="numerical-list__item">
+                        <a class="contacts__link" href="https://github.com/pklgn/web-practice">
+                            <img class="contacts__logo" src="../../public/images/logoGitHub.png" width="15" height="15" alt="">GitHub
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
