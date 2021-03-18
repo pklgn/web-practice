@@ -7,16 +7,16 @@
 }
 .title 
 {
-    color: #01142d; /* Цвет заголовока */
+    color: #011c39; /* Цвет заголовока */
     font-size: 24pt; /* Размер шрифта измеряемый в пунктах */
-    font-family: Georgia, Times, serif; /* Семейство шрифтов */
     font-weight: normal; /* Нормальное начертание текста  */
+    font-family: 'Open Sans', sans-serif;
 }
 .subtitle 
 {
     color: #01142d; /* Цвет заголовока */
     font-size: 16pt; /* Размер шрифта измеряемый в пунктах */
-    font-family: Georgia, Times, serif; /* Семейство шрифтов */
+    font-family: 'Open Sans'; /* Семейство шрифтов */
     font-weight: normal; /* Нормальное начертание текста  */
 }
 .list-items 
@@ -38,7 +38,6 @@
     padding: 0;
     list-style-position: inside;
     text-indent: 2em;
-    overflow: hidden;
 }
 
 .numerical-list
@@ -47,7 +46,6 @@
     padding: 0;
     list-style-position: inside;
     text-indent: 2em;
-    overflow: hidden;
 }
 
 .contacts__logo
@@ -55,5 +53,14 @@
     width: 15px;
     height: 15px;
 }
+
+.photo
+{
+    border-radius: 3px 3px;
+    box-shadow: 0 2px 10px rgba(0,0,0.1,0.3);
+    float: left;
+    margin-right: 30px;
+}
+
 
 
