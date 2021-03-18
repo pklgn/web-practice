@@ -15,17 +15,24 @@
 .title 
 {
     color: #011c39; /* Цвет заголовока */
-    font-size: 24pt; /* Размер шрифта измеряемый в пунктах */
+    font-size: 36pt; /* Размер шрифта измеряемый в пунктах */
     font-weight: normal; /* Нормальное начертание текста  */
     font-family: 'Open Sans', sans-serif;
 }
+
+.info
+{
+
+}
+
 .subtitle 
 {
+
     color: #01142d; /* Цвет заголовока */
     font-size: 16pt; /* Размер шрифта измеряемый в пунктах */
     font-family: 'Open Sans'; /* Семейство шрифтов */
     font-weight: normal; /* Нормальное начертание текста  */
-    margin: 0 auto 20px;
+    margin: 30px auto 20px;
 }
 
 .main-text 
@@ -34,16 +41,19 @@
     margin-left: 10px; /* Отступ слева в пикселах */
     margin-right: 50px; /* Отступ справа в пикселах */
     padding-left: 0px; /* Отступ от линии слева до текста  */
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 14pt;
 }
 
 .list-items
 {
     padding: 0px;
-    margin-left: 100px; /* Отступ слева */
+    padding-inline-start: 24px;
 }
 
 .list-items__item
 {
+    font-size: 12pt;
     margin: 0;
     padding: 0;
     list-style-position: inside;
@@ -58,7 +68,13 @@
     text-indent: 2em;
 }
 
-.contacts__logo::after
+.contacts
+{
+    font-family: "Lucida Console", monospace, sans-serif;
+    font-size: 14pt;
+}
+
+.contacts__logo:after
 {
     content: " ";
 }
@@ -73,10 +89,11 @@
 {
     width: 20%;
     height: 20%;
-    border-radius: 3px 3px;
+    border-radius: 5px 5px;
     box-shadow: 0 2px 10px rgba(0,0,0.1,0.3);
     float: left;
     margin-right: 30px;
+    clear: both;
 }
 
 
