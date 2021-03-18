@@ -9,6 +9,9 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+/lw1/var/
+/lw1/vendor/
+
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache
