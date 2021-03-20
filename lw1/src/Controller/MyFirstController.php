@@ -10,22 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MyFirstController extends AbstractController
 {
-    /**
-     * @Route("/")
-     */
-    public function simpleanswer()
+    public function simple_answer()
     {
-        return $this->render('main/showmain.html.twig', [
+        return $this->render('main/main.html.twig', [
             'about' => ucwords('Ермаков Павел Константинович')
         ]);
     }
 
-    /**
-     * @Route("/pages/first")
-     */
-    public function smthnew()
+    public function about()
     {
-        return $this->render('about/show.html.twig', [
+        return $this->render('about/about.html.twig', [
             'about' => ucwords('Ермаков Павел Константинович')
         ]);
     }
