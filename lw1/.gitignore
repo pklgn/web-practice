@@ -10,8 +10,6 @@
 ###< symfony/framework-bundle ###
 
 /.idea/
-/var/
-/vendor/
 
 ###> symfony/phpunit-bridge ###
 .phpunit
