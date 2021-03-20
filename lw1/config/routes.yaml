@@ -1,3 +1,10 @@
-#index:
-#    path: /
-#    controller: App\Controller\MyFirstController::simpleanswer
+# config/routes.yaml
+main:
+    path: /
+    controller: App\Controller\MyFirstController::simple_answer
+
+about:
+    path: /pages/first
+    controller: App\Controller\MyFirstController::about
+
+
