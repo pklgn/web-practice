@@ -8,75 +8,119 @@
 
 .container
 {
-    max-width: 1000px;
-    margin: 100px 400px;
+    max-width: 60%;
+    margin: 5% auto;
 }
 
-.title 
+.card-with-me
 {
-    color: #011c39; /* Цвет заголовока */
-    font-size: 36pt; /* Размер шрифта измеряемый в пунктах */
-    font-weight: normal; /* Нормальное начертание текста  */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.card-with-me__photo
+{
+    max-width: 30%;
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.card-with-me__photo-img
+{
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.card-with-me__text
+{
+    max-width: 70%;
+}
+
+.texts
+{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card-with-me__title
+{
+    margin-top: 0;
+    font-family: 'Play', sans-serif;
+    font-size: 40px;
+}
+
+.main-text,
+.submain-text
+{
+    margin-top: 0;
+    margin-left: 0;
     font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
 }
 
-.info
+.lists-about-me
 {
-
+    display: flex;
+    justify-content: flex-start;
 }
 
-.subtitle 
+.additional-info
 {
-
-    color: #01142d; /* Цвет заголовока */
-    font-size: 16pt; /* Размер шрифта измеряемый в пунктах */
-    font-family: 'Open Sans'; /* Семейство шрифтов */
-    font-weight: normal; /* Нормальное начертание текста  */
-    margin: 30px auto 20px;
+    max-width: 50%;
 }
 
-.main-text 
+.card_with-me__subjects-list
 {
-    text-align: justify; /* Выравнивание по ширине */
-    margin-left: 10px; /* Отступ слева в пикселах */
-    margin-right: 50px; /* Отступ справа в пикселах */
-    padding-left: 0px; /* Отступ от линии слева до текста  */
-    font-family: Arial, Verdana, sans-serif;
-    font-size: 14pt;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
 }
 
-.list-items
+.subjects-list__items
 {
-    padding: 0px;
-    padding-inline-start: 24px;
-}
-
-.list-items__item
-{
-    font-size: 12pt;
-    margin: 0;
-    padding: 0;
     list-style-position: inside;
-    text-indent: 2em;
+    padding-left: 0;
 }
 
-.numerical-list
+.card_with-me__contacts-list
 {
-    margin: 0;
-    padding: 0;
-    list-style-position: inside;
-    text-indent: 2em;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.contacts
+.contacts-list__title
 {
-    font-family: "Lucida Console", monospace, sans-serif;
-    font-size: 14pt;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
 }
 
-.contacts__logo:after
+.contacts-list__items
 {
-    content: " ";
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.contacts__link
+{
+    text-decoration: none;
+    color: black
+}
+
+.list__item
+{
+    padding-left: 10px;
 }
 
 .contacts__logo
@@ -85,16 +129,6 @@
     height: 15px;
 }
 
-.photo
-{
-    width: 20%;
-    height: 20%;
-    border-radius: 5px 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0.1,0.3);
-    float: left;
-    margin-right: 30px;
-    clear: both;
-}
 
 
 
