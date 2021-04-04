@@ -11,15 +11,16 @@ class ImageList extends ImageSpider
         $this->hobby = $keyWord;
     }
 
-    public function getImagesArray($hobby)
+    public function getImagesArray()
     {
-        $array = ImageSpider::find($hobby);
+        $array = ImageSpider::find($this->hobby);
         return $array;
     }
 
-    public function chooseOne()
+    public function chooseFiveImages()
     {
-        $images = $this->getImagesArray($this->hobby);
-        return $images;
+        $imagesArray = $this->getImagesArray();
+        $output = array_rand($imagesArray,5);
+        return $output;
     }
 }
