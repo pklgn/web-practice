@@ -112,6 +112,13 @@
     padding-inline-start: 0;
 }
 
+.subtitle
+{
+    margin-top: 30px;
+    font-family: 'Play', sans-serif;
+    font-size: 25px;
+}
+
 .contacts__link
 {
     text-decoration: none;
@@ -129,6 +136,28 @@
     height: 15px;
 }
 
+.gallery-list-wrapper
+{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-title
+{
+    display: flex;
+    justify-content: center;
+    font-family: 'Play', sans-serif;
+    font-size: 20px;
+}
 
 
-
+.list
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
