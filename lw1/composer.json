@@ -12,6 +12,7 @@
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
+        "ivan-uskov/image-spider": "^0.1.1",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^6.1",
         "symfony/asset": "5.2.*",
@@ -94,5 +95,9 @@
             "allow-contrib": false,
             "require": "5.2.*"
         }
+    },
+    "require-dev": {
+        "symfony/stopwatch": "^5.2",
+        "symfony/web-profiler-bundle": "^5.2"
     }
 }
