@@ -60,30 +60,16 @@
         </div>
         <h2 class="subtitle">Мои любимые темы</h2>
         <div class="gallery-list-wrapper">
-            <div class="gallery-column">
-                <div class="gallery-title">{{ galleryFirstTitle }}</div>
-                <ul class="list list_first">
-                    {% for index in galleryFirstArrayIndex %}
-                        <li><img src="{{ galleryFirstArray[index] }}" /></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-title">{{ gallerySecondTitle }}</div>
-                <ul class="list list_second">
-                    {% for index in gallerySecondArrayIndex %}
-                        <li><img src="{{ gallerySecondArray[index] }}" /></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-title">{{ galleryThirdTitle }}</div>
-                <ul class="list list_third">
-                    {% for index in galleryThirdArrayIndex %}
-                        <li><img src="{{ galleryThirdArray[index] }}" /></li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% for title in titles %}
+                <div class="gallery-column">
+                    <div class="gallery-title">{{ title }}</div>
+                        <ul class="list list_first">
+                            {% for image in imagesLists[title] %}
+                                <li><img src="{{ image }}" /></li>
+                            {% endfor %}
+                        </ul>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
