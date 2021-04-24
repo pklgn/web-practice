@@ -5,7 +5,7 @@ namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Modules\ImageList;
+use App\Modules\ImageProvider;
 
 class MyFirstController extends AbstractController
 {
@@ -18,29 +18,15 @@ class MyFirstController extends AbstractController
 
     public function about()
     {
-        $galleryFirstTitle = 'buran';
-        $gallerySecondTitle = 'ISS';
-        $galleryThirdTitle = 'space';
-        $galleryFirst = new ImageList($galleryFirstTitle);
-        $gallerySecond = new ImageList($gallerySecondTitle);
-        $galleryThird = new ImageList($galleryThirdTitle);
-        $galleryFirstArray = $galleryFirst->getImagesArray();
-        $gallerySecondArray = $gallerySecond->getImagesArray();
-        $galleryThirdArray = $galleryThird->getImagesArray();
-        $galleryFirstArrayIndex = $galleryFirst->chooseFiveImages();
-        $gallerySecondArrayIndex = $gallerySecond->chooseFiveImages();
-        $galleryThirdArrayIndex = $galleryThird->chooseFiveImages();
+        $galleryTitles = ['buran', 'ISS', 'space'];
+        foreach ($galleryTitles as $galleryTitle)
+            $galleryHobbies[$galleryTitle] = new ImageProvider($galleryTitle);
+        foreach ($galleryHobbies as $title => $galleryHobby)
+            $imagesLists[$title] = $galleryHobby->gatherChosenImages();
         return $this->render('about/about.html.twig', [
             'about' => ucwords('Ермаков Павел Константинович'),
-            'galleryFirstTitle' => ucwords($galleryFirstTitle),
-            'gallerySecondTitle' => ucwords($gallerySecondTitle),
-            'galleryThirdTitle' => ucwords($galleryThirdTitle),
-            'galleryFirstArray' => $galleryFirstArray,
-            'gallerySecondArray' => $gallerySecondArray,
-            'galleryThirdArray' => $galleryThirdArray,
-            'galleryFirstArrayIndex' => $galleryFirstArrayIndex,
-            'gallerySecondArrayIndex' => $gallerySecondArrayIndex,
-            'galleryThirdArrayIndex' => $galleryThirdArrayIndex,
+            'titles' => $galleryTitles,
+            'imagesLists' => $imagesLists,
         ]);
     }
 }
