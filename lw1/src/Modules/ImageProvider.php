@@ -13,8 +13,7 @@ class ImageProvider
 
     public function getImagesArray(): array
     {
-        $array = ImageSpider::find($this->hobby);
-        return $array;
+        return ImageSpider::find($this->hobby);
     }
 
     public function chooseFiveIndexes(): array
@@ -23,9 +22,7 @@ class ImageProvider
         $minIndexVal = 0;
         $maxIndexVal = $imagesNumber - 1;
         for($i = 0; $i < 5; $i++)
-        {
             $chosenIndexes[] = random_int($minIndexVal, $maxIndexVal);
-        }
         return $chosenIndexes;
     }
 
@@ -34,9 +31,7 @@ class ImageProvider
         $initGallery = $this->getImagesArray();
         $indexes = $this->chooseFiveIndexes();
         foreach ($indexes as $index)
-        {
             $chosenGallery[] = $initGallery[$index];
-        }
         return $chosenGallery;
     }
 }
