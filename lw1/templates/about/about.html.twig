@@ -65,7 +65,7 @@
                     <div class="gallery-title">{{ title }}</div>
                         <ul class="list list_first">
                             {% for image in imagesLists[title] %}
-                                <li><img src="{{ image }}" /></li>
+                                <li><img src="{{ image }}" alt="{{ title }} example" title="{{ title }} example" /></li>
                             {% endfor %}
                         </ul>
                 </div>
