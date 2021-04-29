@@ -57,7 +57,7 @@ $('#prev-btn').click(function() {
     prevSlide();
 });
 
-var navBtnId = 0;
+let navBtnId = 0;
 
 $('.slide-nav-btn').click(function() {
     navBtnId = $(this).index();
