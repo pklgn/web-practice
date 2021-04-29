@@ -1,11 +1,11 @@
 import './slider.css';
-var slideNow = 1;
-var slideCount = $('#slidewrapper').children().length;
-var slideInterval = 2000;
-var translateWidth;
+let slideNow = 1;
+let slideCount = $('#slidewrapper').children().length;
+let slideInterval = 2000;
+let translateWidth;
 
 function nextSlide() {
-    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount) {
+    if (slideNow === slideCount || slideNow <= 0 || slideNow > slideCount) {
         $('#slidewrapper').css('transform', 'translate(0, 0)');
         slideNow = 1;
     } else {
