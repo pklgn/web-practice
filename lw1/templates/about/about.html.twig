@@ -3,7 +3,10 @@
 <head>
     <title>Страница обо мне</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/css/style.css" >
+    <!--<link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="/css/slider.css">-->
+    <link rel="stylesheet" href="/build/app.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Play&display=swap" rel="stylesheet">
 </head>
@@ -71,7 +74,34 @@
                 </div>
             {% endfor %}
         </div>
+        <h2 class="subtitle">Слайдер для моих любимых тем</h2>
+            <div id="block-for-slider">
+                <div id="viewport">
+                    <ul id="slidewrapper">
+                        {% for title in titles %}
+                            {% for image in imagesLists[title] %}
+                                <div class="slide-wrapper">
+                                    <li class="slide"><img id="slider-image" src="{{ image }}" alt="{{ title }} example" title="{{ title }} example" /></li>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                    <div id="prev-next-btns">
+                        <div id="prev-btn"></div>
+                        <div id="next-btn"></div>
+                    </div>
+                    <ul id="nav-btns">
+                        {% for title in titles %}
+                            {% for image in imagesLists[title] %}
+                                <li class="slide-nav-btn"></li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
     </div>
-
+    <script type="text/javascript" src="{{ asset('build/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('build/runtime.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('build/vendors-node_modules_core-js_modules_web_timers_js.js') }}"></script>
 </body>
 </html>
