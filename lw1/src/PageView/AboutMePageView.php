@@ -12,10 +12,13 @@ class AboutMePageView
     private function getImagesArrays($galleryTitles): array
     {
         foreach ($galleryTitles as $galleryTitle)
+        {
             $galleryHobbies[$galleryTitle] = new ImageProvider($galleryTitle);
-
+        }
         foreach ($galleryHobbies as $title => $galleryHobby)
-            $imagesLists[$title] = $galleryHobby->gatherChosenImages();
+        {
+            $imagesLists[$title] = $galleryHobby->getImagesArray();
+        }
 
         return $imagesLists;
     }
@@ -28,5 +31,4 @@ class AboutMePageView
             'imagesLists' => self::getImagesArrays($this->galleryTitles),
         ];
     }
-
 }
