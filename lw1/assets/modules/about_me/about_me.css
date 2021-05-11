@@ -1,0 +1,161 @@
+.page
+{
+    font-family: Arial, Verdana,  sans-serif; /* Шрифт */
+    font-size: 10pt; /* Размер шрифта в body  */
+    background-color: #ffffff; /* Фон веб-страницы */
+    color: #2d2c2c; /* Цвет текста */
+}
+
+.container
+{
+    max-width: 60%;
+    margin: 5% auto;
+}
+
+.card-with-me
+{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.card-with-me__photo
+{
+    max-width: 30%;
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.card-with-me__photo-img
+{
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.card-with-me__text
+{
+    max-width: 70%;
+}
+
+.texts
+{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-with-me__title
+{
+    margin-top: 0;
+    font-family: 'Play', sans-serif;
+    font-size: 40px;
+}
+
+.main-text,
+.submain-text
+{
+    margin-top: 0;
+    margin-left: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.lists-about-me
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.additional-info
+{
+    max-width: 50%;
+}
+
+.card_with-me__subjects-list
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.subjects-list__items
+{
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.card_with-me__contacts-list
+{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.contacts-list__title
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.contacts-list__items
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.subtitle
+{
+    margin-top: 30px;
+    font-family: 'Play', sans-serif;
+    font-size: 25px;
+}
+
+.contacts__link
+{
+    text-decoration: none;
+    color: black
+}
+
+.list__item
+{
+    padding-left: 10px;
+}
+
+.contacts__logo
+{
+    width: 15px;
+    height: 15px;
+}
+
+.gallery-list-wrapper
+{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-title
+{
+    display: flex;
+    justify-content: center;
+    font-family: 'Play', sans-serif;
+    font-size: 20px;
+}
+
+.list
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
