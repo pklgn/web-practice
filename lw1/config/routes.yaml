@@ -7,4 +7,9 @@ about:
     path: /pages/first
     controller: App\Controller\AboutMeController::about
 
+about_me:
+    path: /pages/about_me
+    controller: App\Controller\AboutMeController::aboutMePage
+
+
 
