@@ -22,8 +22,8 @@ class HobbieService
         foreach ($hobbieMap as $keyword => $name)
         {
             $images = $this->imageProvider->getImageUrls($name);
-            $Hobbies[] = new Hobbie($keyword, $name, $images);
+            $hobbies[] = new Hobbie($keyword, $name, $images);
         }
-        return $Hobbies;
+        return $hobbies;
     }
 }

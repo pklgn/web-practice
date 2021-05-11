@@ -7,30 +7,32 @@ use App\Modules\AboutMe\App\ImageProviderInterface;
 
 class Hobbie
 {
-    public string $keyword;
-    public string $name;
-    public array $images;
+    private string $keyword;
+    private string $name;
+    private array $images;
 
-    public function __construct(string $keyword,
-                                string $name,
-                                array $images)
-
+    public function __construct(string $keyword, string $name, array $images)
     {
         $this->keyword = $keyword;
         $this->name = $name;
         $this->images =$images;
     }
 
-    public function setName($name): string
+    public function getName(): string
     {
-        return ucwords($name);
+        return $this->name;
+    }
+
+    public function getImages(): array
+    {
+        return $this->images;
     }
 
     public function getHobbie(): array
     {
         return [
             'keyword' => $this->keyword,
-            'name' => $this->setName($this->name),
+            'name' => $this->name,
             'images' => $this->images,
         ];
     }

@@ -8,17 +8,11 @@ use IvanUskov\ImageSpider\ImageSpider;
 
 class ImageProvider implements ImageProviderInterface
 {
-    private string $hobby;
     private const IMAGES_COUNT = 5;
-
-    public function __construct(string $keyword)
-    {
-        $this->hobby = $keyword;
-    }
 
     public function getImageUrls(string $keyword): array
     {
-        $initGallery = ImageSpider::find($this->hobby);
+        $initGallery = ImageSpider::find($keyword);
         $chosenKeys = array_rand($initGallery, self::IMAGES_COUNT);
         foreach ($chosenKeys as $chosenKey)
         {
