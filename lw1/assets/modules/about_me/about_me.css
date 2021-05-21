@@ -150,6 +150,11 @@
     font-size: 20px;
 }
 
+.hobby-image
+{
+    max-width: 300px;
+}
+
 .list
 {
     display: flex;
