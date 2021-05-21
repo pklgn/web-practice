@@ -1546,20 +1546,21 @@
         },
         {
             "name": "ivan-uskov/image-spider",
-            "version": "v0.1.1",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivan-uskov/image-spider.git",
-                "reference": "53da0bd62a4a21c52c2f704286ad29ab31f78922"
+                "reference": "1f8392f104a99489fb864ea2127d2fc11e8b1867"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivan-uskov/image-spider/zipball/53da0bd62a4a21c52c2f704286ad29ab31f78922",
-                "reference": "53da0bd62a4a21c52c2f704286ad29ab31f78922",
+                "url": "https://api.github.com/repos/ivan-uskov/image-spider/zipball/1f8392f104a99489fb864ea2127d2fc11e8b1867",
+                "reference": "1f8392f104a99489fb864ea2127d2fc11e8b1867",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
+                "ext-json": "*",
                 "php": "^7.1"
             },
             "type": "library",
@@ -1581,9 +1582,9 @@
             "description": "PHP library for searching images in Google",
             "support": {
                 "issues": "https://github.com/ivan-uskov/image-spider/issues",
-                "source": "https://github.com/ivan-uskov/image-spider/tree/v0.1.1"
+                "source": "https://github.com/ivan-uskov/image-spider/tree/v0.1.2"
             },
-            "time": "2021-03-19T19:02:01+00:00"
+            "time": "2021-05-21T08:30:53+00:00"
         },
         {
             "name": "laminas/laminas-code",
