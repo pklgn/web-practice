@@ -19,16 +19,6 @@ function nextSlide() {
     }
 }
 
-$(document).ready(function () {
-    let switchInterval = setInterval(nextSlide, slideInterval);
-
-    $('#prev-next-btns').hover(function(){
-        clearInterval(switchInterval);
-    },function() {
-        switchInterval = setInterval(nextSlide, slideInterval);
-    });
-});
-
 function prevSlide() {
     if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
         translateWidth = -$('#viewport').width() * (slideCount - 1);
