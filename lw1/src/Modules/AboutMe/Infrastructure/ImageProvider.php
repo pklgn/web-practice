@@ -12,6 +12,8 @@ class ImageProvider implements ImageProviderInterface
 
     public function getImageUrls(string $keyword): array
     {
+        $chosenGallery = [];
+
         $initGallery = ImageSpider::find($keyword);
         $chosenKeys = array_rand($initGallery, self::IMAGES_COUNT);
         foreach ($chosenKeys as $chosenKey)

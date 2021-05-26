@@ -18,6 +18,8 @@ class HobbieService
 
     public function getHobbies(): array
     {
+        $hobbies = [];
+
         $hobbieMap = $this->configuration->getHobbieMap();
         foreach ($hobbieMap as $keyword => $name)
         {
