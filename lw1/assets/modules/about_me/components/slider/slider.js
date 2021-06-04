@@ -1,8 +1,8 @@
 import './slider.css';
 let slideNow = 1;
 let slideCount = $('#slidewrapper').children().length;
-let slideInterval = 2000;
 let translateWidth;
+let navBtnId = 0;
 
 function nextSlide() {
     if (slideNow === slideCount || slideNow <= 0 || slideNow > slideCount) {
@@ -39,17 +39,7 @@ function prevSlide() {
     }
 }
 
-$('#next-btn').click(function() {
-    nextSlide();
-});
-
-$('#prev-btn').click(function() {
-    prevSlide();
-});
-
-let navBtnId = 0;
-
-$('.slide-nav-btn').click(function() {
+function rewindX() {
     navBtnId = $(this).index();
 
     let translateWidth;
@@ -62,4 +52,8 @@ $('.slide-nav-btn').click(function() {
         });
         slideNow = navBtnId + 1;
     }
-});
+}
+
+export { prevSlide };
+export { nextSlide };
+export { rewindX };
