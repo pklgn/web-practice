@@ -18,4 +18,10 @@ class AboutMeController extends AbstractController
         $pageParams = $pageView->buildParams();
         return $this->render('about_me/about_me.html.twig', $pageParams);
     }
+
+    public function updateAllImages(HobbieService $hs): Response
+    {
+        $hs->updateHobbies();
+        return $this->forward('App\Controller\AboutMeController::aboutMePage');
+    }
 }
