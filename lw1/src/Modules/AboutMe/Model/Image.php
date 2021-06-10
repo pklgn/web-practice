@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace App\Modules\AboutMe\Model;
 
@@ -9,6 +9,12 @@ class Image
     private int $id;
     private string $keyword;
     private string $url;
+
+    public function __construct($keyword, $url)
+    {
+        $this->keyword = $keyword;
+        $this->url = $url;
+    }
 
     public function getId(): int
     {
