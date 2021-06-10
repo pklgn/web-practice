@@ -15,7 +15,7 @@ class Hobbie
     {
         $this->keyword = $keyword;
         $this->name = $name;
-        $this->images =$images;
+        $this->images = $images;
     }
 
     public function getName(): string
