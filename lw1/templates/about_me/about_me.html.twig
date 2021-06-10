@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Play&display=swap" rel="stylesheet">
 </head>
 <body class="page">
-<div class="container">
+<a class="container">
     <div class="card-with-me">
         <div class="card-with-me__photo">
             <img class="card-with-me__photo-img" src="/images/photo.jpg"  alt="Me" />
@@ -72,6 +72,7 @@
             </div>
         {% endfor %}
     </div>
+    <a href="{{ path('update') }}" id="updbtn" class="update update_button">Обновить все картинки</a>
     <h2 class="subtitle">Слайдер для моих любимых тем</h2>
     <div id="block-for-slider">
         <div id="viewport">
