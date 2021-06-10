@@ -15,10 +15,12 @@ class AboutMePageView
 
     public function buildParams(): array
     {
-        foreach ($this->hobbies as $hobbie)
+        $hobbiesTitles = [];
+        $hobbiesImages = [];
+        foreach ($this->hobbies as $hobby)
         {
-            $hobbiesTitles[] = $hobbie->getName();
-            $hobbiesImages[$hobbie->getName()] = $hobbie->getImages();
+            $hobbiesTitles[] = $hobby->getName();
+            $hobbiesImages[$hobby->getName()] = $hobby->getImages();
         }
 
         return [
