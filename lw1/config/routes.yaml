@@ -2,3 +2,7 @@
 about_me:
     path: /pages/about_me
     controller: App\Controller\AboutMeController::aboutMePage
+
+update:
+    path: /pages/about_me/update
+    controller: App\Controller\AboutMeController::updateAllImages
