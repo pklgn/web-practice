@@ -44,7 +44,8 @@ class HobbieService
         }
         else
         {
-            foreach ($hobbieMap as $keyword => $name) {
+            foreach ($hobbieMap as $keyword => $name)
+            {
                 $images = [];
                 $imageObjects = $this->imageRepository->getImages($keyword);
                 foreach ($imageObjects as $imageObject) {
@@ -56,7 +57,12 @@ class HobbieService
         return $hobbies;
     }
 
-    public function updateHobbies()
+    public function getUpdatedHobby(string $keyword): array
+    {
+        return $this->imageRepository->getImages($keyword);
+    }
+
+    public function updateHobbies(): array
     {
         $newUrls = [];
         $hobbies = [];
@@ -75,5 +81,28 @@ class HobbieService
             $hobbies[] = new Hobbie($keyword, $name, $images);
         }
         return $hobbies;
+    }
+
+    public function updateHobby(string $keyword): array
+    {
+        $hobby = [];
+        $newUrls = [];
+        $hobbieMap = $this->configuration->getHobbieMap();
+        foreach ($hobbieMap as $hobbieKeyword => $name)
+        {
+            $images = [];
+            if ($hobbieKeyword === $keyword)
+            {
+                $newUrls = $this->imageProvider->getImageUrls($name);
+                $this->imageRepository->updateImages($keyword, $newUrls);
+                $imageObjects = $this->imageRepository->getImages($keyword);
+                foreach ($imageObjects as $imageObject)
+                {
+                    $images[] = $imageObject->getUrl();
+                }
+            }
+            $hobby[] = new Hobbie($hobbieKeyword, $name, $images);
+        }
+        return $hobby;
     }
 }
