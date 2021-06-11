@@ -1,0 +1,33 @@
+.update_button
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 27px; /*было 54px*/
+    padding-bottom: 60px;
+}
+
+.update_button-link
+{
+    font: 19px/32px Georgia;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    min-height: 50px;
+    border-radius: 5px;
+    background-color: #15a98c;
+    user-select: none; /* Убираем текстовое выделение */
+    text-decoration: none;	/* Убираем подчеркивание */
+    outline: none; /* Убираем контур вокруг ссылки */
+    color: #f5f5f5;
+}
+
+.update_button-link:active
+{
+    background-color: #098d71; /* Цвет кнопки при нажатии */
+}
+.update_button-link:hover
+{
+    background-color: #098d71; /* Цвет кнопки при наведении курсора */
+}

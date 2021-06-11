@@ -1,8 +1,10 @@
 import './about_me.css';
 import './components/slider/slider.js';
+import './components/update_button/update_button.js';
 import { prevSlide } from "./components/slider/slider";
 import { nextSlide } from "./components/slider/slider";
 import { rewindX } from "./components/slider/slider";
+import {bindButton} from "./components/update_button/update_button";
 
 let slideInterval = 2000;
 
@@ -20,4 +22,8 @@ $(document).ready(function () {
     },function() {
         switchInterval = setInterval(nextSlide, slideInterval);
     });
+
+    bindButton('Buran', 'rockets');
+    bindButton('ISS', 'exploration');
+    bindButton('Space', 'space');
 });
