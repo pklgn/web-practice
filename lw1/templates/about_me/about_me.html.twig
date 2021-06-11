@@ -71,14 +71,13 @@
                     {% endfor %}
                 </ul>
                 <div class="films-container__button update_button films-container__button">
-                    <a id="{{ title }}" class="update update_button-link films-container__button-link"
-                       href="{{ path('updateOne') }}">Обновить {{ title }}</a>
+                    <div id="{{ title }}" class="update update_button-link">Обновить {{ title }}</div>
                 </div>
             </div>
         {% endfor %}
     </div>
     <div class="films-container__button update_button films-container__button">
-        <a id="updbtn" class="updateAll updateAll_button update_button-link films-container__button-link"
+        <a id="updbtn" class="updateAll updateAll_button update_button-link"
            href="{{ path('updateAll') }}">Обновить все изображения</a>
     </div>
     <h2 class="subtitle">Слайдер для моих любимых тем</h2>
