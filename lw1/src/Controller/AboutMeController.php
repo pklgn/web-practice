@@ -21,7 +21,8 @@ class AboutMeController extends AbstractController
 
     public function updateOneHobby(HobbieService $hs, Request $request): Response
     {
-        $keyword = $request->query->get('newKeyword');
+        $data = json_decode($request->getContent(), true);
+        $keyword = $data['keyword'];
         $hs->updateHobby($keyword);
         return $this->redirectToRoute('about_me');
     }
