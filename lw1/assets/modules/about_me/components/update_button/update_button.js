@@ -1,15 +1,25 @@
 import './update_button.css';
 
-function bindButton(btnId, keyword) {
-    const button = document.getElementById(btnId)
-
-    button.addEventListener("click", getUpdate)
+function bindButton(buttonId, keyword, updateUrl) {
+    const button = document.getElementById(buttonId);
+    button.addEventListener("click", function (event) {
+        getUpdate(button, keyword, updateUrl);
+    });
+    console.log(keyword, button.getAttribute('href'));
 }
 
-async function getUpdate() {
-    const response = await fetch('./updateOne?' + new URLSearchParams({
-        newKeyword: keyword,
-    }))
+async function getUpdate(button, keyword, updateUrl) {
+    let data = {
+        'keyword': keyword,
+    }
+
+    await fetch(updateUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    })
 }
 
-export {bindButton}
+export {bindButton, getUpdate};

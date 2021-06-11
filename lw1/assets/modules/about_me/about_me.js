@@ -1,10 +1,10 @@
 import './about_me.css';
 import './components/slider/slider.js';
 import './components/update_button/update_button.js';
-import { prevSlide } from "./components/slider/slider";
-import { nextSlide } from "./components/slider/slider";
-import { rewindX } from "./components/slider/slider";
-import {bindButton} from "./components/update_button/update_button";
+import {prevSlide} from "./components/slider/slider";
+import {nextSlide} from "./components/slider/slider";
+import {rewindX} from "./components/slider/slider";
+import {bindButton, getUpdate} from "./components/update_button/update_button";
 
 let slideInterval = 2000;
 
@@ -17,13 +17,15 @@ $('.slide-nav-btn').click(rewindX);
 $(document).ready(function () {
     let switchInterval = setInterval(nextSlide, slideInterval);
 
-    $('#prev-next-btns').hover(function(){
+    $('#prev-next-btns').hover(function () {
         clearInterval(switchInterval);
-    },function() {
+    }, function () {
         switchInterval = setInterval(nextSlide, slideInterval);
     });
 
-    bindButton('Buran', 'rockets');
-    bindButton('ISS', 'exploration');
-    bindButton('Space', 'space');
+    const updateUrl = window.location.href + '/updateOne';
+
+    bindButton('Buran', 'rockets', updateUrl);
+    bindButton('ISS', 'exploration', updateUrl);
+    bindButton('Space', 'space', updateUrl);
 });
