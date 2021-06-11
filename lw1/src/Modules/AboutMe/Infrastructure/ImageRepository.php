@@ -24,24 +24,15 @@ class ImageRepository implements ImageRepositoryInterface
         $this->repository = $this->entityManager->getRepository(Image::class);
     }
 
-    /**
-     * @param string $keyword
-     * @param array $urls
-     */
     public function addImages(string $keyword, array $urls): void
     {
-        foreach ($urls as $url)
-        {
+        foreach ($urls as $url) {
             $newImage = new Image($keyword, $url);
             $this->entityManager->persist($newImage);
         }
         $this->entityManager->flush();
     }
 
-    /**
-     * @param string $keyword
-     * @return array
-     */
     public function getImages(string $keyword): ?array
     {
         return $this->repository->findBy([
@@ -52,6 +43,15 @@ class ImageRepository implements ImageRepositoryInterface
     public function removeAllImages(): void
     {
         $images = $this->repository->findAll();
+        foreach ($images as $image) {
+            $this->entityManager->remove($image);
+        }
+        $this->entityManager->flush();
+    }
+
+    public function removeImages(string $keyword): void
+    {
+        $images = $this->getImages($keyword);
         foreach ($images as $image)
         {
             $this->entityManager->remove($image);
@@ -59,17 +59,10 @@ class ImageRepository implements ImageRepositoryInterface
         $this->entityManager->flush();
     }
 
-    private function zip(array $indexes, $values): array
+    public function updateImages(string $keyword, array $urls): void
     {
-        $result = [];
-
-        $arrayLength = count($indexes);
-        for ($i = 0; $i < $arrayLength; $i++)
-        {
-            $result[$indexes[$i]] = $values[$i];
-        }
-
-        return $result;
+        $this->removeImages($keyword);
+        $this->addImages($keyword, $urls);
     }
 
     public function updateAllImages(array $newImages): void
@@ -80,5 +73,4 @@ class ImageRepository implements ImageRepositoryInterface
             $this->addImages($keyword, $imagesUrls);
         }
     }
-
 }
