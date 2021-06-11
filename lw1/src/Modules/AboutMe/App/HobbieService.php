@@ -40,6 +40,9 @@ class HobbieService
         return $hobbies;
     }
 
+    /**
+     * @return array Hobbie
+     */
     public function getHobbies(): array
     {
         $hobbieMap = $this->configuration->getHobbieMap();
@@ -62,6 +65,9 @@ class HobbieService
         return $this->collectHobbies($hobbieMap);
     }
 
+    /**
+     * @return array Hobbie
+     */
     public function updateHobbies(): array
     {
         $newUrls = [];
@@ -76,6 +82,10 @@ class HobbieService
         return $this->collectHobbies($hobbieMap);
     }
 
+    /**
+     * @param string $keyword
+     * @return array Hobbie
+     */
     public function updateHobby(string $keyword): array
     {
         $hobby = [];
