@@ -23,11 +23,27 @@ class HobbieService
         $this->configuration = $configuration;
     }
 
-    public function getHobbies(): array
+    private function collectHobbies($hobbyMap): array
     {
         $hobbies = [];
 
+        foreach ($hobbyMap as $keyword => $name)
+        {
+            $images = [];
+            $imageObjects = $this->imageRepository->getImages($keyword);
+            foreach ($imageObjects as $imageObject)
+            {
+                $images[] = $imageObject->getUrl();
+            }
+            $hobbies[] = new Hobbie($keyword, $name, $images);
+        }
+        return $hobbies;
+    }
+
+    public function getHobbies(): array
+    {
         $hobbieMap = $this->configuration->getHobbieMap();
+
         foreach ($hobbieMap as $keyword => $name)
         {
             $images[] = $this->imageRepository->getImages($keyword);
@@ -42,51 +58,28 @@ class HobbieService
             }
             $this->imageRepository->updateAllImages($newUrls);
         }
-        else
-        {
-            foreach ($hobbieMap as $keyword => $name)
-            {
-                $images = [];
-                $imageObjects = $this->imageRepository->getImages($keyword);
-                foreach ($imageObjects as $imageObject) {
-                    $images[] = $imageObject->getUrl();
-                }
-                $hobbies[] = new Hobbie($keyword, $name, $images);
-            }
-        }
-        return $hobbies;
-    }
 
-    public function getUpdatedHobby(string $keyword): array
-    {
-        return $this->imageRepository->getImages($keyword);
+        return $this->collectHobbies($hobbieMap);
     }
 
     public function updateHobbies(): array
     {
         $newUrls = [];
-        $hobbies = [];
+
         $hobbieMap = $this->configuration->getHobbieMap();
         foreach ($hobbieMap as $keyword => $name)
         {
             $newUrls[$keyword] = $this->imageProvider->getImageUrls($name);
         }
         $this->imageRepository->updateAllImages($newUrls);
-        foreach ($hobbieMap as $keyword => $name) {
-            $images = [];
-            $imageObjects = $this->imageRepository->getImages($keyword);
-            foreach ($imageObjects as $imageObject) {
-                $images[] = $imageObject->getUrl();
-            }
-            $hobbies[] = new Hobbie($keyword, $name, $images);
-        }
-        return $hobbies;
+
+        return $this->collectHobbies($hobbieMap);
     }
 
     public function updateHobby(string $keyword): array
     {
         $hobby = [];
-        $newUrls = [];
+
         $hobbieMap = $this->configuration->getHobbieMap();
         foreach ($hobbieMap as $hobbieKeyword => $name)
         {
