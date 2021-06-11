@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <title>Страница обо мне</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     {{ encore_entry_link_tags('about_me') }}
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,7 +12,7 @@
 <a class="container">
     <div class="card-with-me">
         <div class="card-with-me__photo">
-            <img class="card-with-me__photo-img" src="/images/photo.jpg"  alt="Me" />
+            <img class="card-with-me__photo-img" src="/images/photo.jpg" alt="Me"/>
         </div>
         <div class="card-with-me__text">
             <div class="texts">
@@ -66,13 +66,21 @@
                 <div class="gallery-title">{{ title }}</div>
                 <ul class="list list_first">
                     {% for image in imagesLists[title] %}
-                        <li><img class="hobby-image" src="{{ image }}" alt="{{ title }} example" title="{{ title }} example" /></li>
+                        <li><img class="hobby-image" src="{{ image }}" alt="{{ title }} example"
+                                 title="{{ title }} example"/></li>
                     {% endfor %}
                 </ul>
+                <div class="films-container__button update_button films-container__button">
+                    <a id="{{ title }}" class="update update_button-link films-container__button-link"
+                       href="{{ path('updateOne') }}">Обновить {{ title }}</a>
+                </div>
             </div>
         {% endfor %}
     </div>
-    <a href="{{ path('update') }}" id="updbtn" class="update update_button">Обновить все картинки</a>
+    <div class="films-container__button update_button films-container__button">
+        <a id="updbtn" class="updateAll updateAll_button update_button-link films-container__button-link"
+           href="{{ path('updateAll') }}">Обновить все изображения</a>
+    </div>
     <h2 class="subtitle">Слайдер для моих любимых тем</h2>
     <div id="block-for-slider">
         <div id="viewport">
@@ -80,9 +88,11 @@
                 {% for title in titles %}
                     {% for image in imagesLists[title] %}
                         <div class="slide-wrapper">
-                            <li class="slide"><img id="slider-image" src="{{ image }}" alt="{{ title }} example" title="{{ title }} example" /></li>
+                            <li class="slide"><img id="slider-image" src="{{ image }}" alt="{{ title }} example"
+                                                   title="{{ title }} example"/></li>
                         </div>
                     {% endfor %}
+
                 {% endfor %}
             </ul>
             <div id="prev-next-btns">
@@ -98,7 +108,7 @@
             </ul>
         </div>
     </div>
-</div>
-{{ encore_entry_script_tags('about_me') }}
+    </div>
+    {{ encore_entry_script_tags('about_me') }}
 </body>
 </html>
