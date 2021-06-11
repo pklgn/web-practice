@@ -8,6 +8,6 @@
             <generator/>
         </id>
         <field name="keyword" type="string" column="keyword"/>
-        <field name="url" type="string" column="url"/>
+        <field name="url" type="text" column="url"/>
     </entity>
 </doctrine-mapping>
